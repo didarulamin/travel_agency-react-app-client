@@ -1,0 +1,18 @@
+import React from "react";
+import AwesomeTour from "../../components/AwesomeTour/AwesomeTour";
+import Banner from "../../components/Banner/Banner";
+import Destination from "../../components/Destination/Destination";
+import Packages from "../../components/TravelPackages/Packages";
+
+const Home = () => {
+  return (
+    <div>
+      <Banner />
+      <Packages />
+      <Destination />
+      <AwesomeTour />
+    </div>
+  );
+};
+
+export default Home;

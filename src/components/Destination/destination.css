@@ -1,0 +1,19 @@
+.destination-area {
+  background: linear-gradient(
+      rgba(48, 79, 71, 0.3) 100%,
+      rgba(48, 79, 71, 0.4) 0
+    ),
+    url(https://www.tourx-react.egenslab.com/static/media/feature-bg-1.d1ccfd39.png)
+      50% no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 100%;
+  /* height: 450px; */
+  position: relative;
+}
+.section-head {
+  color: white;
+  text-align: center;
+  margin: 30px;
+}

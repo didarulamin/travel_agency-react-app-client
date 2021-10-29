@@ -1,0 +1,42 @@
+/* style for footer component */
+.footer {
+  background-color: #27325a;
+  color: #718ea1;
+  width: 100%;
+  height: 100%;
+}
+
+.subscribe {
+  margin-right: 50px;
+}
+.subscribe input {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.company {
+  display: flex;
+  text-decoration: none;
+  color: #718ea1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  border-top: 1px solid white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-section-one {
+  padding: 15px;
+}
+
+@media only screen and (min-width: 576px) {
+  /* For mobile phones: */
+  .footer-section-one {
+    height: 400px;
+    margin-top: 10px !important;
+  }
+}

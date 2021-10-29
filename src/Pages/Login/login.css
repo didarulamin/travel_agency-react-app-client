@@ -1,0 +1,11 @@
+.form-container {
+  height: 500px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
