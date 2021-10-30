@@ -15,8 +15,8 @@ const SignUp = () => {
 
   //signup form component
   return (
-    <div className="login p-4 mb-5">
-      <div className=" form-container row ">
+    <div className="login p-4 mb-5 ">
+      <div className=" form-container row shadow-lg p-3 bg-body rounded">
         <div>
           <div className="text-center">
             <h1 className="fs-3 my-2">Sign Up</h1>

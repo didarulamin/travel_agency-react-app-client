@@ -1,4 +1,5 @@
 import React from "react";
+import "./awesometour.css";
 
 const AwesomeTour = () => {
   return (
@@ -10,7 +11,7 @@ const AwesomeTour = () => {
           alt=""
         />
       </div>
-      <div className="d-flex flex-column justify-content-center p-0 ps-5">
+      <div className="d-flex flex-column justify-content-center p-0 ps-5 awsometour-text">
         <h1 className="fs-1">
           Go Ahead & Make <br /> Awesome Tour
         </h1>

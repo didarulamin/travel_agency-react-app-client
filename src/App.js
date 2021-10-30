@@ -8,6 +8,12 @@ import PassReset from "./Pages/PassReset/PassReset";
 import Footer from "../src/components/Footer/Footer";
 import Header from "../src/components/Header/Header";
 import NotFound from "./components/NotFound/NotFound";
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
+import MyBookings from "./Pages/MyBookings/MyBookings";
+import ManageBookings from "./Pages/ManageBookings/ManageBookings";
+import ManageTourPackages from "./Pages/ManageTourPackages/ManageTourPackages";
+import Contact from "./Pages/Contact/Contact";
+import Booking from "./Pages/Booking/Booking";
 
 function App() {
   return (
@@ -25,11 +31,25 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
             <Route path="/recovery" component={PassReset} />
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
-
+            <PrivateRoute path="/mybookings">
+              <MyBookings />
+            </PrivateRoute>
+            <PrivateRoute path="/managebookings">
+              <ManageBookings />
+            </PrivateRoute>
+            <PrivateRoute path="/managetourpackages">
+              <ManageTourPackages />
+            </PrivateRoute>
+            <PrivateRoute path="/booking/:id">
+              <Booking />
+            </PrivateRoute>
             <Route path="/*">
               <NotFound></NotFound>
             </Route>

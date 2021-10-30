@@ -10,13 +10,13 @@ const NotFound = () => {
     <Container>
       {/* page titile */}
       <Helmet>
-        <title>404 - Talk Space</title>
+        <title>404 - Go Beyond Travels</title>
       </Helmet>
 
       <Row className=" justify-content-center align-items-center text-center error-container">
         <Col>
           <div className="error-text">
-            <h1 className="fs-3">Error Page 404</h1>
+            <h1 className="fs-3">Opps! Page not found</h1>
             <p>
               The page you are looking for doesn't exist. Please try searching
               for some other page, or return to the website's homepage to find
@@ -26,7 +26,11 @@ const NotFound = () => {
         </Col>
         <Col>
           <div>
-            <img className="error-img" src={img_uri} alt="" />
+            <img
+              className="error-img"
+              src="https://www.tourx-react.egenslab.com/static/media/404.16338b63.png"
+              alt=""
+            />
           </div>
         </Col>
       </Row>

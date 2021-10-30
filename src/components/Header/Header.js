@@ -26,8 +26,14 @@ const Header = () => {
             {/* <LinkContainer to="/about">
               <Nav.Link>About</Nav.Link>
             </LinkContainer> */}
-            <LinkContainer to="/team">
-              <Nav.Link>Our team</Nav.Link>
+            <LinkContainer to="/mybookings">
+              <Nav.Link>My Bookings</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/managebookings">
+              <Nav.Link>Manage Bookings</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/managetourpackages">
+              <Nav.Link>Manage Tour Package</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/contact">
               <Nav.Link>Contact</Nav.Link>
@@ -45,7 +51,7 @@ const Header = () => {
                 <Nav.Link>Login</Nav.Link>
               </LinkContainer>
             )}
-            <Nav.Link> Phone: + 0800 24 66 7921</Nav.Link>
+            {/* <Nav.Link> Phone: + 0800 24 66 7921</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
