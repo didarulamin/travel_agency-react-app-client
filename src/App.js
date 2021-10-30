@@ -14,6 +14,8 @@ import ManageBookings from "./Pages/ManageBookings/ManageBookings";
 import ManageTourPackages from "./Pages/ManageTourPackages/ManageTourPackages";
 import Contact from "./Pages/Contact/Contact";
 import Booking from "./Pages/Booking/Booking";
+import PackupdateForm from "./components/PackageForm/PackupdateForm";
+import PackageForm from "./components/PackageForm/PackageForm";
 
 function App() {
   return (
@@ -46,6 +48,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/managetourpackages">
               <ManageTourPackages />
+            </PrivateRoute>
+            <PrivateRoute path="/update">
+              <PackupdateForm />
+            </PrivateRoute>
+            <PrivateRoute path="/create">
+              <PackageForm />
             </PrivateRoute>
             <PrivateRoute path="/booking/:id">
               <Booking />

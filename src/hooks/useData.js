@@ -5,9 +5,7 @@ const useData = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/didarulamin/demodata/main/healthcaredata.json"
-    )
+    fetch("http://localhost:5000/api/allpackages")
       .then((data) => data.json())
       .then((data) => setData(data));
   }, []);

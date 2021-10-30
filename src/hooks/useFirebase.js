@@ -12,6 +12,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.config";
+import axios from "axios";
 
 initializeAuthentication();
 
@@ -19,8 +20,19 @@ initializeAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [admin, setAdmin] = useState();
 
   const auth = getAuth();
+  const isAdmin = user.email;
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/signup/admin/check/${isAdmin}`)
+      .then((response) => {
+        if (user.email === response.data.email) {
+          setAdmin(true);
+        }
+      });
+  }, [isAdmin]);
 
   const signInUsingEmailAndPassword = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -36,6 +48,7 @@ const useFirebase = () => {
   const registerNewUser = ({ email, password, username }) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
+        console.log(result.uid);
         verifyEmail();
         setUserName(username);
       })
@@ -91,6 +104,7 @@ const useFirebase = () => {
     createUserWithEmailAndPassword,
     registerNewUser,
     handleResetPassword,
+    admin,
   };
 };
 

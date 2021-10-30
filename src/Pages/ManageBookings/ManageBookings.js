@@ -8,7 +8,7 @@ const ManageBookings = () => {
     axios.get("http://localhost:5000/api/allbookings").then((response) => {
       setBookings(response.data);
     });
-  }, [booking]);
+  }, []);
 
   const onApprove = (id) => {
     console.log(id);
@@ -19,11 +19,10 @@ const ManageBookings = () => {
       })
       .then((response) => {})
       .then((response) => {
-        alert(response);
+        alert("Success");
       });
   };
   const onCancel = (id) => {
-    console.log(id);
     const status = "Cancel";
     axios
       .put(`http://localhost:5000/api/booking/status/${id}`, {
@@ -48,7 +47,8 @@ const ManageBookings = () => {
       <Helmet>
         <title>Manage Bookings</title>
       </Helmet>
-      <div>
+      <h1 className="fs-2 text-center">Manage Bookings</h1>
+      <div className="m-2 m-sm-5 text-center shadow-lg p-sm-5">
         <table className="table">
           <thead>
             <tr>
@@ -64,21 +64,21 @@ const ManageBookings = () => {
           <tbody>
             {booking.map((item) => (
               <tr>
-                <th scope="row">{item.bookingId.toString().slice(0, 8)}</th>
+                <th scope="row">{item.bookingId?.toString().slice(0, 8)}</th>
                 <td>{item?.bookedUserName}</td>
-                <td>{item?.packageId}</td>
+                <td>{item?.packName}</td>
                 <td>{item?.phone}</td>
                 <td>{item?.email}</td>
                 <td>{item?.status}</td>
                 <td className="d-flex">
                   <button
-                    onClick={() => onApprove(item.doc_id)}
+                    onClick={() => onApprove(item.bookingId)}
                     className="btn btn-info m-2"
                   >
                     Approve
                   </button>
                   <button
-                    onClick={() => onCancel(item.doc_id)}
+                    onClick={() => onCancel(item.bookingId)}
                     className="btn btn-info m-2"
                   >
                     Cancel

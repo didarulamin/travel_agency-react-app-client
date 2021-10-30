@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
@@ -15,8 +16,15 @@ const SignUpFrom = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     registerNewUser(data);
     setSuccess(true);
+
+    axios
+      .post("http://localhost:5000/api/signup/admin/", { data })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   //react hook form
@@ -65,6 +73,18 @@ const SignUpFrom = () => {
         />
         {/* errors will return when field validation fails  */}
         {errors.password && <p>This field is required</p>}
+        <div>
+          <input
+            className="form-check-input m-1"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+            {...register("isAdmin", {})}
+          />
+          <label className="form-check-label " for="flexCheckDefault">
+            Request for admin signup?
+          </label>
+        </div>
 
         <input className="btn btn-info my-4 " type="submit" value="Sign up" />
       </form>

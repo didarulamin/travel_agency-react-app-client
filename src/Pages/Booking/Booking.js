@@ -12,15 +12,15 @@ const Booking = () => {
   const { handleSubmit, reset, register } = useForm();
 
   const { user } = useAuth();
+
   const packName = packData[0]?.title;
   const onSubmit = (data) => {
-    console.log(user.uid);
-
     const bookedUser = user.uid;
     const bookedUserName = user.displayName;
     const userEmail = user.email;
     const packageId = id;
     const status = "pending";
+
     const bookingData = {
       ...data,
       bookedUser,
@@ -36,7 +36,7 @@ const Booking = () => {
         console.log(res);
         console.log(res.data);
       });
-
+    alert("success");
     reset();
   };
 
@@ -65,7 +65,7 @@ const Booking = () => {
               variant="outlined"
               className="form-control m-2 "
               name="title"
-              {...register("name")}
+              //   {...register("name")}
             />
             <TextField
               defaultValue={user.email}
@@ -74,7 +74,7 @@ const Booking = () => {
               variant="outlined"
               className="form-control m-2 "
               name="title"
-              {...register("email")}
+              //   {...register("email")}
             />
             <TextField
               id="outlined-basic"

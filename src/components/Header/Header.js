@@ -6,7 +6,7 @@ import useAuth from "../../hooks/useAuth";
 
 //navbar component
 const Header = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut, admin } = useAuth();
 
   return (
     <Navbar bg="light" expand="lg">
@@ -26,19 +26,27 @@ const Header = () => {
             {/* <LinkContainer to="/about">
               <Nav.Link>About</Nav.Link>
             </LinkContainer> */}
-            <LinkContainer to="/mybookings">
-              <Nav.Link>My Bookings</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/managebookings">
-              <Nav.Link>Manage Bookings</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/managetourpackages">
-              <Nav.Link>Manage Tour Package</Nav.Link>
-            </LinkContainer>
+
+            {admin ? (
+              <>
+                {" "}
+                <LinkContainer to="/managebookings">
+                  <Nav.Link>Manage Bookings</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/managetourpackages">
+                  <Nav.Link>Manage Tour Package</Nav.Link>
+                </LinkContainer>
+              </>
+            ) : (
+              <>
+                <LinkContainer to="/mybookings">
+                  <Nav.Link>My Bookings</Nav.Link>
+                </LinkContainer>
+              </>
+            )}
             <LinkContainer to="/contact">
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>
-
             {user.email ? (
               <div className="mx-5">
                 <span>Logedin as {user.displayName}</span>
