@@ -27,9 +27,8 @@ const Header = () => {
               <Nav.Link>About</Nav.Link>
             </LinkContainer> */}
 
-            {admin ? (
+            {admin.email ? (
               <>
-                {" "}
                 <LinkContainer to="/managebookings">
                   <Nav.Link>Manage Bookings</Nav.Link>
                 </LinkContainer>
@@ -44,6 +43,7 @@ const Header = () => {
                 </LinkContainer>
               </>
             )}
+
             <LinkContainer to="/contact">
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>

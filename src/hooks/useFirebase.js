@@ -20,7 +20,7 @@ initializeAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState({});
 
   const auth = getAuth();
 
@@ -31,12 +31,14 @@ const useFirebase = () => {
       )
       .then((response) => {
         if (user.email === response.data.email) {
-          setAdmin(true);
+          if (response.data.isAdmin === true) {
+            setAdmin(user);
+          }
         }
       });
-  }, [user.email]);
+  }, [user]);
 
-  console.log(admin);
+  console.log(admin.email);
   const signInUsingEmailAndPassword = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -92,8 +94,10 @@ const useFirebase = () => {
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
-      .then(() => {})
-      .finally(() => setAdmin(false));
+      .then(() => {
+        setAdmin({});
+      })
+      .finally();
   };
 
   return {
