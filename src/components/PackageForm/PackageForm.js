@@ -4,6 +4,8 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import "./packages.css";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PackageForm = () => {
   const { handleSubmit, reset, register } = useForm();
@@ -19,17 +21,15 @@ const PackageForm = () => {
         submitBy,
       })
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
-
-        alert("success");
-        window.location.reload();
+        toast("Success", { type: "success" });
+        // window.location.reload();
         reset();
       });
   };
 
   return (
     <div>
+      <ToastContainer />
       <h1 className="fs-2 text-center">Manage Tour Packages</h1>
       <div className="text-center m-2">
         <Link to="/update">

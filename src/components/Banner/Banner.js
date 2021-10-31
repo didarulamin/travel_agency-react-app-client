@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BannerSlider from "../BannerSlider/BannerSlider";
 import { useRef } from "react";
 

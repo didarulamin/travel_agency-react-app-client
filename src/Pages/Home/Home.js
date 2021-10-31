@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AwesomeTour from "../../components/AwesomeTour/AwesomeTour";
 import Banner from "../../components/Banner/Banner";
 import Destination from "../../components/Destination/Destination";
 import Packages from "../../components/TravelPackages/Packages";
 import { Spinner } from "react-bootstrap";
 
-const Home = () => {
-  const [loading, setLoading] = useState(true);
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-  window.onload = (event) => {
-    setLoading(false);
-  };
+const Home = () => {
   return (
     <div>
       <Banner />
       <Packages />
       <Destination />
       <AwesomeTour />
-
-      {loading && <Spinner animation="border" />}
     </div>
   );
 };

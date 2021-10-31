@@ -29,15 +29,8 @@ const PackupdateForm = () => {
         }
       )
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
-
-        alert("success");
-        // window.location.reload();
-        // reset();
+        toast("success", { type: "success" });
       });
-
-    toast("Wow so easy!");
   };
 
   function onUpdate(id) {
@@ -152,7 +145,7 @@ const PackupdateForm = () => {
         </form>
       </div>
       <div>
-        <h1 className="fs-2 text-center">Manage Tour Package</h1>
+        <h1 className="fs-2 text-center">All Tour Packages</h1>
         <ManageTourPack data={data} onUpdate={onUpdate} />
       </div>
     </div>

@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Helmet from "react-helmet";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { confirmAlert } from "react-confirm-alert";
 const ManageBookings = () => {
   const [booking, setBookings] = useState([]);
   useEffect(() => {
@@ -13,7 +15,6 @@ const ManageBookings = () => {
   }, []);
 
   const onApprove = (id) => {
-    console.log(id);
     const status = "Approve";
     axios
       .put(
@@ -24,7 +25,7 @@ const ManageBookings = () => {
       )
       .then((response) => {})
       .then((response) => {
-        alert("Success");
+        toast("Success", { type: "success" });
       });
   };
   const onCancel = (id) => {
@@ -38,22 +39,37 @@ const ManageBookings = () => {
       )
       .then((response) => {})
       .then((response) => {
-        alert("Success");
+        toast("Success", { type: "success" });
       });
   };
   const onDelete = (id) => {
-    axios
-      .put(
-        `https://blooming-inlet-82006.herokuapp.com/api/booking/delete/${id}`
-      )
-      .then((response) => {})
-      .then((response) => {
-        alert("Success");
-      });
+    confirmAlert({
+      title: "Confirm to submit",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            axios
+              .put(
+                `https://blooming-inlet-82006.herokuapp.com/api/booking/delete/${id}`
+              )
+              .then((response) => {})
+              .then((response) => {
+                toast("Success", { type: "success" });
+              });
+          },
+        },
+        {
+          label: "No",
+        },
+      ],
+    });
   };
 
   return (
     <div>
+      <ToastContainer />
       <Helmet>
         <title>Manage Bookings</title>
       </Helmet>

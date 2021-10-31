@@ -3,7 +3,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ManageTourPack = ({ data, onUpdate }) => {
   // console.log(data);
   const onDelete = (id) => {
@@ -20,13 +21,12 @@ const ManageTourPack = ({ data, onUpdate }) => {
               )
               .then((response) =>
                 // setData(response.data);
-                alert("Success")
+                toast("Success", { type: "success" })
               );
           },
         },
         {
           label: "No",
-          onClick: () => alert("Data not deleted"),
         },
       ],
     });
@@ -34,6 +34,7 @@ const ManageTourPack = ({ data, onUpdate }) => {
 
   return (
     <div className="m-2 m-sm-5 text-center shadow-lg p-sm-5">
+      <ToastContainer />
       <table className="table ">
         <thead>
           <tr>

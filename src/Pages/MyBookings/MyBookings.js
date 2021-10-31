@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import useAuth from "../../hooks/useAuth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { confirmAlert } from "react-confirm-alert";
 
 const MyBookings = () => {
   const [mybookings, setMyBookings] = useState([]);
@@ -11,28 +14,44 @@ const MyBookings = () => {
     axios
       .get(`https://blooming-inlet-82006.herokuapp.com/api/mybooking/${id}`)
       .then((response) => {
-        console.log(response);
         setMyBookings(response.data);
       });
   }, [id]);
 
   const onCancel = (id) => {
     const status = "Cancel";
-    axios
-      .put(
-        `https://blooming-inlet-82006.herokuapp.com/api/booking/status/${id}`,
+
+    confirmAlert({
+      title: "Confirm to cancel",
+      message: "Are you sure to cancel",
+      buttons: [
         {
-          status,
-        }
-      )
-      .then((response) => {})
-      .then((response) => {
-        alert("Success");
-      });
+          label: "Yes",
+          onClick: () => {
+            axios
+              .put(
+                `https://blooming-inlet-82006.herokuapp.com/api/booking/status/${id}`,
+                {
+                  status,
+                }
+              )
+              .then((response) => {})
+              .then((response) => {
+                toast("success", { type: "success" });
+              });
+          },
+        },
+        {
+          label: "No",
+          // onClick: () => alert("Booking not cancel"),
+        },
+      ],
+    });
   };
 
   return (
     <div>
+      <ToastContainer />
       <Helmet>
         <title>My Bookings</title>
       </Helmet>
