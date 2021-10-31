@@ -16,10 +16,8 @@ const SignUpFrom = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     registerNewUser(data);
     setSuccess(true);
-
     axios
       .post("https://blooming-inlet-82006.herokuapp.com/api/signup/admin/", {
         data,

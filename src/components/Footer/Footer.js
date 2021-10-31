@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import payment from "../../assets/creditcard-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import {
@@ -48,50 +49,39 @@ const Footer = () => {
               className="m-1"
             />
           </div>
-          <p className="text-white fs-4 text-start">Talk Space</p>
-          <p>2578 Broadway #607 New York, NY 10025</p>
+          <p className="text-white fs-1 text-start">Go Beyond Travels</p>
+          <p>2578 Broadway #607 New York, NY 10026</p>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <p className="text-white fs-4 text-start">About</p>
+          <p className="text-white fs-2 my-2 text-start">About</p>
           <div className="company">
-            <Link to="#">Join our network</Link>
+            <Link to="#">Why Us</Link>
             <Link to="#">Career</Link>
-            <Link to="#">Blog</Link>
-            <Link to="#">Privacy policy</Link>
-            <Link to="#">Terms of use</Link>
-            <Link to="#">Contact</Link>
+            <Link to="#">Reviews</Link>
+            <Link to="#">Why Touring</Link>
+            <Link to="#">Travel Insurance</Link>
+            <Link to="#">Programme</Link>
           </div>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <p className="text-white fs-4 text-start">Services</p>
+          <p className="text-white fs-2 text-start my-2">Support</p>
           <div className="company">
-            <Link to="#">Online therapy</Link>
-            <Link to="#">Psychiatry</Link>
-            <Link to="#">Team therapy</Link>
-            <Link to="#">LGBTQIA community</Link>
-            <Link to="#">Unlimited messaging therapy</Link>
+            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">About Us</Link>
+            <Link to="/">Destinations</Link>
+            <Link to="/">Oue Blog</Link>
+            <Link to="/">Package</Link>
           </div>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <p className="text-white fs-4 text-start">Useful links</p>
+          <p className="text-white fs-2 text-start my-2">We Accepts:</p>
           <div className="company">
-            <Link to="#">Find a therapist</Link>
-            <Link to="#">Mental health library</Link>
-            <Link to="#">Free mental health test</Link>
-            <Link to="#">Terms & Conditions</Link>
-            <Link to="#">Anxiety test</Link>
+            <img src={payment} alt="" />
           </div>
         </div>
-        {/* <div className="subscribe d-flex flex-column justify-content-start">
-          <p className="text-white fs-4 text-start">Subscribe</p>
-          <input type="text" placeholder="Your email address" />
-          <p className="w-75 text-start">
-            Get the latest news and updates right at your inbox.
-          </p>
-        </div> */}
       </div>
       <div className=" copyright">
-        <span> © 2022 Talk Space, All Rights Reserved</span>
+        <span> © 2022 Go Beyond Travels, All Rights Reserved</span>
       </div>
     </div>
   );

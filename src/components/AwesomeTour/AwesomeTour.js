@@ -3,7 +3,7 @@ import "./awesometour.css";
 
 const AwesomeTour = () => {
   return (
-    <div className="row row-cols-1 row-cols-sm-2 m-0 ">
+    <div className="row row-cols-1 row-cols-sm-2 m-0 p-0 ">
       <div className="p-0">
         <img
           className="img-fluid"
@@ -12,12 +12,14 @@ const AwesomeTour = () => {
         />
       </div>
       <div className="d-flex flex-column justify-content-center p-0 ps-5 awsometour-text">
-        <h1 className="fs-1">
+        <h1 className="fs-1 my-2">
           Go Ahead & Make <br /> Awesome Tour
         </h1>
-        <p className="fs-5">Discover Hidden Wonders On Trips With Peulis</p>
+        <p className="fs-5 my-2">
+          Discover Hidden Wonders On Trips With Peulis
+        </p>
 
-        <button className="btn btn-info w-25">Explore more</button>
+        <button className="btn btn-info w-25 px-3">Explore more</button>
       </div>
     </div>
   );

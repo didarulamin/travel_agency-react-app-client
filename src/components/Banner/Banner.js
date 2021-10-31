@@ -1,6 +1,7 @@
 import React from "react";
-import SimpleSlider from "../Cardslider/Cardslider";
+import BannerSlider from "../BannerSlider/BannerSlider";
 import { useRef } from "react";
+
 import "./Banner.css";
 // import background from "../../assets/background.mp4";
 
@@ -19,25 +20,26 @@ const Banner = () => {
       <div className="slider-button">
         <button
           onClick={() => prevSlide(sliderRef)}
-          className="btn btn-primary slider-button-one"
+          className=" btn btn-outline-info border-2  slider-button-one"
         >
-          {/* <img src={left_icon} alt="" /> */}
-          Left
+          <i class="fa-solid fa-chevron-left text-white"></i>
         </button>
         <button
           onClick={() => nextSlide(sliderRef)}
-          className="btn btn-primary slider-button-two"
+          className="btn btn-outline-info border-2 slider-button-two"
         >
-          {/* <img src={right_icon} alt="" /> */}
-          Right
+          <i class="fa-solid fa-chevron-right text-white font-bold"></i>
         </button>
       </div>
 
-      <div className="center">
-        <h1 className="text-white">Center</h1>
+      <div className="banner-text center">
+        <h1 className="text-white fs-1 font-bold ">Travel With Us</h1>
+        <p className="text-white fs-3 font-bold">
+          Enjoy Your Holidays in Amazing Places
+        </p>
       </div>
 
-      <SimpleSlider sliderRef={sliderRef}></SimpleSlider>
+      <BannerSlider sliderRef={sliderRef} />
     </div>
   );
 };

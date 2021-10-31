@@ -4,3 +4,16 @@
 
   margin: 20px 20px;
 }
+
+.card-img {
+  width: 80%;
+}
+
+.card-button {
+  background-color: #ff6d34;
+  color: white;
+}
+
+.icon {
+  color: #ffa11a;
+}

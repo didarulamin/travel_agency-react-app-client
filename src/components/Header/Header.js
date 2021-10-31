@@ -49,13 +49,22 @@ const Header = () => {
             </LinkContainer>
             {user.email ? (
               <div className="mx-5">
-                <span>Logedin as {user.displayName}</span>
-                <button onClick={logOut} className="btn btn-info m-3">
+                <span>
+                  <i className="fa-solid fa-user mx-2 text-primary fs-4"></i>
+                </span>
+                <span>{user.displayName}</span>
+                <button
+                  onClick={logOut}
+                  className="btn btn-outline-info text-black m-3 "
+                >
                   Logout
                 </button>
               </div>
             ) : (
-              <LinkContainer to="/login" className="mx-5 btn btn-info">
+              <LinkContainer
+                to="/login"
+                className="mx-3 px-4 btn btn-outline-info text-black"
+              >
                 <Nav.Link>Login</Nav.Link>
               </LinkContainer>
             )}

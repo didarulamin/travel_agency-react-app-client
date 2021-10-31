@@ -9,7 +9,7 @@ const DestinationSlider = ({ sliderRef }) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
@@ -41,63 +41,57 @@ const DestinationSlider = ({ sliderRef }) => {
   };
 
   return (
-    <div className="des-slider-container ">
+    <div className="des-slider-container mb-5 destination">
       <Slider {...settings} ref={sliderRef}>
         <div className="des-slider card " key={1}>
           <img
             className="img-fluid "
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
+            src="https://i.ibb.co/FYnxC5T/popular-6.jpg"
             alt="..."
           />
+          <div class="des-center text-white fs-3 font-bold">
+            Super Maldives Trip
+          </div>
         </div>
         <div className="des-slider  card" key={2}>
           <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
+            src="https://i.ibb.co/37365Yf/popular-5.jpg"
             className="img-fluid "
             alt="..."
           />
+          <div class="des-center text-white fs-3 font-bold">
+            Venice Tour - Italy
+          </div>
         </div>
         <div className="des-slider  card " key={3}>
           <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
+            src="https://i.ibb.co/ZHV5q3m/popular-4.jpg"
             className="img-fluid "
             alt="..."
           />
+          <div class="des-center text-white fs-3 font-bold">
+            Beauty Of Tajmahal
+          </div>
         </div>
         <div className="des-slider  card " key={3}>
           <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
+            src="https://i.ibb.co/WV8Brz1/popular-2.jpg"
             className="img-fluid "
             alt="..."
           />
+          <div class="des-center text-white fs-3 font-bold">
+            Glacier Walk Combo
+          </div>
         </div>
         <div className="des-slider  card " key={3}>
           <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
+            src="https://i.ibb.co/cvVgp8k/popular-3.jpg"
             className="img-fluid "
             alt="..."
           />
-        </div>
-        <div className="des-slider  card " key={3}>
-          <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
-            className="img-fluid "
-            alt="..."
-          />
-        </div>
-        <div className="des-slider  card " key={3}>
-          <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
-            className="img-fluid "
-            alt="..."
-          />
-        </div>
-        <div className="des-slider  card " key={3}>
-          <img
-            src="http://themescare.com/demos/peulis-v6/assets/img/destination-2.jpg"
-            className="img-fluid "
-            alt="..."
-          />
+          <div class="des-center text-white fs-3 font-bold">
+            Great Britain Travel
+          </div>
         </div>
       </Slider>
     </div>

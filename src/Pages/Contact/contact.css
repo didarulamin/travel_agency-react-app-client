@@ -1,0 +1,9 @@
+.contact-container {
+  width: 400px;
+
+  height: 600px;
+}
+.heading {
+  border-bottom: 5px solid red;
+  /* width: 300px; */
+}

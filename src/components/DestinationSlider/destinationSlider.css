@@ -1,44 +1,22 @@
 .des-slider-container .card {
   width: 300px !important;
-  height: 400px;
+  background: rgba(0, 0, 0, 0.72) none repeat scroll 0 0;
   border-radius: 20px;
   overflow: hidden;
-  /* background-color: bisque; */
-  /* overflow: hidden;
-  color: #fff; */
 }
-
-/* .des-slider img {
-  width: 290px;
-  height: 430px;
-} */
-/* .overly-text {
-  position: absolute;
-  bottom: 0;
-  margin: 20px;
-} */
-
-/* .des-slider {
-  background-color: white;
-  border-radius: 20px;
-  overflow: hidden;
-} */
 
 .des-slider-container {
-  /* position: absolute; */
-  width: 100%;
-  /*  height: 200px;
-  top: 30%;
-  left: 50px; */
+  width: 90%;
 }
 
-/* 
-  @media (max-width: 786px) and (min-width: 992px) {
-    .slider-container {
-      position: relative;
-      width: 900px;
-      left: 35%;
-      margin-bottom: 20px;
-    }
-  }
-   */
+.des-center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.destination img {
+  opacity: 0.5;
+}
