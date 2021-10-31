@@ -6,9 +6,11 @@ import "./package.css";
 const Packages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/allpackages").then((response) => {
-      setPackages(response.data);
-    });
+    axios
+      .get("https://blooming-inlet-82006.herokuapp.com/api/allpackages")
+      .then((response) => {
+        setPackages(response.data);
+      });
   }, []);
 
   return (

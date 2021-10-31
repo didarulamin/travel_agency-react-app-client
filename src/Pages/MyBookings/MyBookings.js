@@ -8,18 +8,23 @@ const MyBookings = () => {
   const { user } = useAuth();
   const id = user.uid;
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/mybooking/${id}`).then((response) => {
-      console.log(response);
-      setMyBookings(response.data);
-    });
+    axios
+      .get(`https://blooming-inlet-82006.herokuapp.com/api/mybooking/${id}`)
+      .then((response) => {
+        console.log(response);
+        setMyBookings(response.data);
+      });
   }, [id]);
 
   const onCancel = (id) => {
     const status = "Cancel";
     axios
-      .put(`http://localhost:5000/api/booking/status/${id}`, {
-        status,
-      })
+      .put(
+        `https://blooming-inlet-82006.herokuapp.com/api/booking/status/${id}`,
+        {
+          status,
+        }
+      )
       .then((response) => {})
       .then((response) => {
         alert("Success");

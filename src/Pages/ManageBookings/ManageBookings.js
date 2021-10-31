@@ -5,18 +5,23 @@ import Helmet from "react-helmet";
 const ManageBookings = () => {
   const [booking, setBookings] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/allbookings").then((response) => {
-      setBookings(response.data);
-    });
+    axios
+      .get("https://blooming-inlet-82006.herokuapp.com/api/allbookings")
+      .then((response) => {
+        setBookings(response.data);
+      });
   }, []);
 
   const onApprove = (id) => {
     console.log(id);
     const status = "Approve";
     axios
-      .put(`http://localhost:5000/api/booking/status/${id}`, {
-        status,
-      })
+      .put(
+        `https://blooming-inlet-82006.herokuapp.com/api/booking/status/${id}`,
+        {
+          status,
+        }
+      )
       .then((response) => {})
       .then((response) => {
         alert("Success");
@@ -25,9 +30,12 @@ const ManageBookings = () => {
   const onCancel = (id) => {
     const status = "Cancel";
     axios
-      .put(`http://localhost:5000/api/booking/status/${id}`, {
-        status,
-      })
+      .put(
+        `https://blooming-inlet-82006.herokuapp.com/api/booking/status/${id}`,
+        {
+          status,
+        }
+      )
       .then((response) => {})
       .then((response) => {
         alert("Success");
@@ -35,7 +43,9 @@ const ManageBookings = () => {
   };
   const onDelete = (id) => {
     axios
-      .put(`http://localhost:5000/api/booking/delete/${id}`)
+      .put(
+        `https://blooming-inlet-82006.herokuapp.com/api/booking/delete/${id}`
+      )
       .then((response) => {})
       .then((response) => {
         alert("Success");

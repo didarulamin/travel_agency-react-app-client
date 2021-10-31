@@ -21,7 +21,9 @@ const SignUpFrom = () => {
     setSuccess(true);
 
     axios
-      .post("http://localhost:5000/api/signup/admin/", { data })
+      .post("https://blooming-inlet-82006.herokuapp.com/api/signup/admin/", {
+        data,
+      })
       .then((response) => {
         console.log(response);
       });

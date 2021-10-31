@@ -20,20 +20,23 @@ initializeAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [admin, setAdmin] = useState();
+  const [admin, setAdmin] = useState(false);
 
   const auth = getAuth();
-  const isAdmin = user.email;
+
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/signup/admin/check/${isAdmin}`)
+      .get(
+        `https://blooming-inlet-82006.herokuapp.com/api/signup/admin/check/${user.email}`
+      )
       .then((response) => {
         if (user.email === response.data.email) {
           setAdmin(true);
         }
       });
-  }, [isAdmin]);
+  }, [user.email]);
 
+  console.log(admin);
   const signInUsingEmailAndPassword = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -90,7 +93,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {})
-      .finally(() => setIsLoading(false));
+      .finally(() => setAdmin(false));
   };
 
   return {

@@ -31,7 +31,7 @@ const Booking = () => {
       packName,
     };
     axios
-      .post("http://localhost:5000/api/booking/", { bookingData })
+      .post("https://blooming-inlet-82006.herokuapp.com/api/booking/", { bookingData })
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -41,7 +41,7 @@ const Booking = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/package/${id}`).then((response) => {
+    axios.get(`https://blooming-inlet-82006.herokuapp.com/api/package/${id}`).then((response) => {
       console.log(response);
       setPackData(response.data);
     });

@@ -14,7 +14,7 @@ const PackupdateForm = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/allpackages")
+      .get("https://blooming-inlet-82006.herokuapp.com/api/allpackages")
       .then((response) => setData(response.data));
   }, []);
 
@@ -22,9 +22,12 @@ const PackupdateForm = () => {
     const id = defaultValue.id;
     const data = newdata;
     axios
-      .put(`http://localhost:5000/api/package/update/${id}`, {
-        data,
-      })
+      .put(
+        `https://blooming-inlet-82006.herokuapp.com/api/package/update/${id}`,
+        {
+          data,
+        }
+      )
       .then((res) => {
         console.log(res);
         console.log(res.data);

@@ -14,7 +14,10 @@ const PackageForm = () => {
     console.log(user.uid);
     const submitBy = user.uid;
     axios
-      .post("http://localhost:5000/api/addTourPackage/", { data, submitBy })
+      .post("https://blooming-inlet-82006.herokuapp.com/api/addTourPackage/", {
+        data,
+        submitBy,
+      })
       .then((res) => {
         console.log(res);
         console.log(res.data);

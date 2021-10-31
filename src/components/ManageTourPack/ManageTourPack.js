@@ -15,7 +15,9 @@ const ManageTourPack = ({ data, onUpdate }) => {
           label: "Yes",
           onClick: () => {
             axios
-              .get(`http://localhost:5000/api/package/delete/${id}`)
+              .get(
+                `https://blooming-inlet-82006.herokuapp.com/api/package/delete/${id}`
+              )
               .then((response) =>
                 // setData(response.data);
                 alert("Success")
