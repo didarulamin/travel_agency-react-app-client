@@ -8,7 +8,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const PackageForm = () => {
-  const { handleSubmit, reset, register } = useForm();
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors },
+  } = useForm();
 
   const { user } = useAuth();
 
@@ -45,50 +50,64 @@ const PackageForm = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="fs-2 p-2">Add a Tour Package</h1>
+        {(errors.title && "name is required") ||
+          (errors.price && "price is required") ||
+          (errors.rating && "rating is required") ||
+          (errors.destination && "destination is required") ||
+          (errors.tour_duration && "duration  is required") ||
+          (errors.return_time && "return time is required") ||
+          (errors.not_included && "Not included is required") ||
+          (errors.included && "included is required") ||
+          (errors.img_url && "Image is required") ||
+          (errors.destination && "destination is required") ||
+          (errors.description && "description is required") ||
+          (errors.departure_time && "departure time is required") ||
+          (errors.departure && "departure is required") ||
+          (errors.accommodation && "accommodation is required")}
         <div className="row row-cols-2 p-0 m-0">
           <div>
             <input
               className="form-control m-2 border border-darken-3"
               placeholder="Title"
               // defaultValue={defaultValue.title}
-              {...register("title")}
+              {...register("title", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               // defaultValue={defaultValue.price}
               placeholder="Price"
-              {...register("price")}
+              {...register("price", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               // defaultValue={defaultValue.rating}
               placeholder="Rating"
-              {...register("rating")}
+              {...register("rating", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               // defaultValue={defaultValue.destination}
               placeholder="destination"
-              {...register("destination")}
+              {...register("destination", { required: true })}
             />
 
             <input
               className="form-control m-2 border border-darken-3"
               placeholder="departure"
               // defaultValue={defaultValue.departure}
-              {...register("departure")}
+              {...register("departure", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               placeholder="departure time"
               // defaultValue={defaultValue.departure_time}
-              {...register("departure_time")}
+              {...register("departure_time", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               placeholder="Accommodation"
               // defaultValue={defaultValue.accommodation}
-              {...register("accommodation")}
+              {...register("accommodation", { required: true })}
             />
           </div>
 
@@ -98,19 +117,19 @@ const PackageForm = () => {
               className="form-control m-2 border border-darken-3"
               // defaultValue={defaultValue.img_url}
               placeholder="Destination Image"
-              {...register("img_url")}
+              {...register("img_url", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               placeholder="Return Time"
               // defaultValue={defaultValue.return_time}
-              {...register("return_time")}
+              {...register("return_time", { required: true })}
             />
             <input
               className="form-control m-2 border border-darken-3"
               placeholder="Tour Duration"
               // defaultValue={defaultValue.tour_duration}
-              {...register("tour_duration")}
+              {...register("tour_duration", { required: true })}
             />
             <textarea
               className="form-control m-2 border border-darken-3"
@@ -118,7 +137,7 @@ const PackageForm = () => {
               // defaultValue={defaultValue.description}
               id="exampleFormControlTextarea1"
               rows="3"
-              {...register("description")}
+              {...register("description", { required: true })}
             ></textarea>
             <textarea
               className="form-control m-2 border border-darken-3"
@@ -126,7 +145,7 @@ const PackageForm = () => {
               // defaultValue={defaultValue.included}
               id="exampleFormControlTextarea1"
               rows="3"
-              {...register("included")}
+              {...register("included", { required: true })}
             ></textarea>
             <textarea
               // defaultValue={defaultValue.not_included}
@@ -134,7 +153,7 @@ const PackageForm = () => {
               placeholder="Not Included"
               id="exampleFormControlTextarea1"
               rows="3"
-              {...register("not_included")}
+              {...register("not_included", { required: true })}
             ></textarea>
           </div>
         </div>

@@ -18,14 +18,6 @@ import PackupdateForm from "./components/PackageForm/PackupdateForm";
 import PackageForm from "./components/PackageForm/PackageForm";
 
 function App() {
-    const [loading, setLoading] = useState(true);
-
-useEffect(() => {
-  setLoading(false);
-})
-
-
-
   return (
     <div>
       <AuthProvider>
